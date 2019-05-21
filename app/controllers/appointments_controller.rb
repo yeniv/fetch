@@ -3,6 +3,17 @@ class AppointmentsController < ApplicationController
   end
 
   def accept
+    @appointment = Appointment.find(params[:id])
+    @appointment.status = "Accepted"
+    @appointment.save
+    redirect_to profile_path(current_user)
+  end
+
+  def deny
+    @appointment = Appointment.find(params[:id])
+    @appointment.status = "Rejected"
+    @appointment.save
+    redirect_to profile_path(current_user)
   end
 
   def show
