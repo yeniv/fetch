@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'users#show'
 
+  # resources :pages, only: [:about]
 end
 
 
