@@ -2,5 +2,6 @@
 
 <p> Name: <%= @dog.name %> </p>
 <p> Location: <%= @dog.location %> </p>
+<%= cl_image_tag @dog.photo, width: 400, height: 300, crop: :fill) %>
 
 <%= link_to "ALL doggos", dogs_path  %>
