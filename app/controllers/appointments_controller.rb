@@ -6,6 +6,28 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @appointment = Appointment.new(params[:id])
+    @appointment = Appointment.find(params[:id])
+  end
+
+  # This needs to go to Dog#show
+  # def new
+  #   @appointment = Appointment.new
+  # end
+
+  def create
+    @dog = Dog.find(params[:id])
+    @appointment = Appointment.new(appointment_params)
+
+    if @appointment.save
+      redirect_to profile_path # (current_user)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def appointment_params
+    params.require(:appointments).permit(:request_message, :date, :time_start, :time_start)
   end
 end
