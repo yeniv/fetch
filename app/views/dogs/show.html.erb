@@ -1,16 +1,29 @@
-<h1><%= @dog.name %> </h1>
+<div class="container">
 
-<p> Location: <%= @dog.location %> </p>
-<%= cl_image_tag @dog.photo, width: 400, height: 300, crop: :fill %>
+  <div class="row justify-content-center">
 
-<%= link_to "ALL doggos", dogs_path  %>
+    <div class="col-4">
 
-<h3>Request to walk <%= @dog.name %></h3>
+      <h1><%= @dog.name %> </h1>
 
-  <%= simple_form_for([@dog, @appointment]) do |f| %>
-  <%= f.input :request_message %>
-  <%= f.input :date %>
-  <%= f.input :time_start %>
-  <%= f.input :time_end %>
-  <%= f.button :submit, class: "btn btn-lg btn-outline-primary" %>
-  <% end %>
+      <p> Location: <%= @dog.location %> </p>
+      <%= cl_image_tag @dog.photo, width: 400, height: 300, crop: :fill %>
+
+      <%= link_to "ALL doggos", dogs_path  %>
+
+      <h3>Request to walk <%= @dog.name %></h3>
+
+      <%= simple_form_for([@dog, @appointment]) do |f| %>
+      <%= f.input :request_message %>
+      <%= f.input :date %>
+      <%= f.input :time_start, label: 'Pickup' %>
+      <%= f.input :time_end, label: 'Dropoff' %>
+      <%= f.button :submit, class: "btn btn-lg btn-outline-primary" %>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>
