@@ -8,22 +8,20 @@
 
 <% @appointments.each do |appointment| %>
 
-<div class="appointment-card">
+<div class="notification">
+  <img src="<%=appointment.user.profile_photo%>" class="avatar-bordered img-crop"/>
+  <img src="<%=appointment.dog.photo%>" class="avatar-bordered img-crop"/>
+  <div class="notification-content">
+    <p><strong><%= appointment.user.first_name %></strong> would like to walk <strong><%= appointment.dog.name %></strong></p>
+    <h4>"<%= appointment.request_message %>"</h4>
+    <p>Status: <%= appointment.status %></p>
+  </div>
 
-  <h4><%= appointment.user.first_name %> wants to walk <%= appointment.dog.name %></h4>
+  <div class="notification-actions">
+    <%= link_to "Accept", accept_appointment_path(appointment), method: :patch %>
 
-  <p><%= appointment.date %></p>
-
-  <p><%= appointment.time_start %></p>
-
-  <p><%= appointment.time_end %></p>
-
-  <p>Status: <%= appointment.status %></p>
-
-  <%= link_to "Accept", accept_appointment_path(appointment), method: :patch %>
-
-  <%= link_to "Reject", deny_appointment_path(appointment), method: :patch %>
-
+    <%= link_to "Reject", deny_appointment_path(appointment), method: :patch %>
+  </div>
 </div>
 
 <% end %>
