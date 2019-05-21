@@ -1,8 +1,26 @@
-<h1>Add a new doggo</h1>
+<div class="container justify-content-center">
 
-<%= simple_form_for @dog do |f| %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <p>input photo upload</p>
-  <%= f.button :submit %>
-<% end %>
+  <div class="row justify-content-center">
+
+    <div class="col-4">
+
+      <h1>Add your doggo!</h1>
+
+      <%= simple_form_for @dog do |f| %>
+      <%= f.input :name %>
+      <%= f.input :breed %>
+      <%= f.input :gender, collection: ["Male", "Female", "Unspecified"]%>
+      <%= f.input :age %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit, class: "btn btn-lg btn-outline-primary" %>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>
