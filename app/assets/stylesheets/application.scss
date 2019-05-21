@@ -12,3 +12,8 @@
 @import "components/index";
 @import "pages/index";
 @import "components/banner";
+
+body {
+  min-height: 100vh;
+  padding-top: 60px;
+}
