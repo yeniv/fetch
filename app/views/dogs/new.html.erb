@@ -1,0 +1,7 @@
+<h1>Add a new doggo</h1>
+
+<%= simple_form_for @dog do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.button :submit %>
+<% end %>
