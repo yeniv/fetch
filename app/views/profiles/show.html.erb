@@ -1,0 +1,6 @@
+<%= @user.first_name %>
+<%  @user.dogs.each do |dog| %>
+
+<%= cl_image_tag dog.photo, width: 400, height: 300, crop: :fill   %>
+
+<% end %>
