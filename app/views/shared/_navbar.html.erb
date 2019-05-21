@@ -11,24 +11,28 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item padding-navbar">
         <div class="hover-border-bottom">
-          <a class="nav-link" href="#">Home</a>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </div>
       </li>
       <li class="nav-item padding-navbar">
         <div class="hover-border-bottom">
-          <a class="nav-link" href="#">Add a dog</a>
+          <%= link_to "Add a dog", new_dog_path, class: "nav-link"  %>
         </div>
       </li>
       <li class="padding-navbar nav-item">
         <div class="hover-border-bottom">
-          <a class="nav-link" href="">View profile</a>
+          <%= link_to "Profile", profile_path, class: "nav-link" %>
         </div>
       </li>
       <li class="nav-item dropdown">
         <div>
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Log out</a>
+            <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%  else %>
+            <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
+            <% end %>
           </div>
         </div>
       </li>
