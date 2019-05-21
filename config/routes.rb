@@ -14,19 +14,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'profile', to: 'users#show'
-
+  resource :profile, only: [:show]
 end
-
-
-# get 'profile', to: 'users#show'
-
-
-
-
-# /dogs
-# dogs/new
-# dogs/id
-# dogs/id/appointments
-# appointments/id/deny-accept
-# /profile
