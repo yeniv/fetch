@@ -1,0 +1,9 @@
+<h1>Show all Doggies</h1>
+<%  @dogs.each do |dog|  %>
+
+<p> Name: <%= dog.name %> </p>
+<p> Location: <%= dog.location %> </p>
+<%= link_to "Show this doggo", dog_path(dog) %>
+<p>----------</p>
+
+<% end %>
