@@ -1,11 +1,11 @@
-<h1>Show all Doggies</h1>
+<h1 id="h1ofshow">Show all Doggies</h1>
 <div class="grid-container">
 <%  @dogs.each do |dog|  %>
   <div class="card margin-of-card" style="width: 15rem;">
-    <img src= '<%= image_path dog.photo %>', class="card-img-top" alt="...">
+    <img id = "dogimg" src= '<%= image_path dog.photo %>', class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"> '<%= dog.name %>' </h5>
-      <p class="card-text"><%= dog.location %></p>
+      <p id="pofshow" class="card-text"><%= dog.location %></p>
       <!-- <a href="" class="btn btn-primary">Details</a> -->
       <%= link_to "Details", dog_path(dog), class: "btn btn-primary"  %>
     </div>
