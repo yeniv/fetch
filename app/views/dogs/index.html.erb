@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="page-title">
     <h1> Browse your new doggo friend </h1>
   </div>
@@ -9,8 +8,9 @@
       <img src='<%= dog.photo %>', class="card-photo" />
       <div class="card-body">
         <h5 class="card-title"><%= dog.name %></h5>
+        <p class="card-text"><%= dog.location %></p>
         <p class="card-text"> <%= dog.description %> </p>
-        <%= button_to "Details", dog_path(dog), class: "btn btn-flat"%>
+        <%= link_to "Details", dog_path(dog), class: "btn btn-flat"%>
       </div>
     </div>
   <% end %>
