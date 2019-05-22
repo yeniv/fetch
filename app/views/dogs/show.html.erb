@@ -14,6 +14,7 @@
 
         <h3>Request to walk <%= @dog.name %></h3>
 
+
         <%= simple_form_for([@dog, @appointment]) do |f| %>
         <%= f.input :request_message %>
         <%= f.input :date %>
