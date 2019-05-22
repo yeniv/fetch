@@ -1,27 +1,71 @@
-<h1> <%= @user.first_name %>'s Profile </h1>
+<div class="container">
 
-<% @user.dogs.each do |dog| %>
-  <%= cl_image_tag dog.photo, width: 400, height: 300, crop: :fill %>
-<% end %>
-
-<h2>Requests to book my dog(s)</h2>
-
-<% @appointments.each do |appointment| %>
-
-<div class="notification">
-  <img src="<%=appointment.user.profile_photo%>" class="avatar-bordered img-crop"/>
-  <img src="<%=appointment.dog.photo%>" class="avatar-bordered img-crop"/>
-  <div class="notification-content">
-    <p><strong><%= appointment.user.first_name %></strong> would like to walk <strong><%= appointment.dog.name %></strong></p>
-    <h4>"<%= appointment.request_message %>"</h4>
-    <p>Status: <%= appointment.status %></p>
+  <div>
+    <h1> <%= @user.first_name %>'s Profile </h1>
+    <% @user.dogs.each do |dog| %>
+    <%= cl_image_tag dog.photo, width: 400, height: 300, crop: :fill %>
+    <% end %>
   </div>
 
-  <div class="notification-actions">
-    <%= link_to "Accept", accept_appointment_path(appointment), method: :patch %>
+  <% if @appointments.present? %>
+  <h2>Requests</h2>
+  <% end %>
 
-    <%= link_to "Reject", deny_appointment_path(appointment), method: :patch %>
+  <% @appointments.each do |appointment| %>
+
+  <% if appointment.status.downcase == "pending" %>
+    <% status_style = "badge badge-pill badge-primary" %>
+  <% elsif appointment.status.downcase == "accepted" %>
+    <% status_style = "badge badge-pill badge-success" %>
+  <% elsif appointment.status.downcase == "rejected" %>
+    <% status_style = "badge badge-pill badge-danger" %>
+  <% else %>
+    <% status_style = "badge badge-pill badge-secondary" %>
+  <% end %>
+
+  <div class="notification">
+
+    <img src='<%= appointment.user.profile_photo %>' class="avatar-large"
+    />
+
+    <div class="notification-content">
+
+      <div class="underline">
+
+      <% if current_user == appointment.dog.user %>
+      <p><strong>You</strong> want to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
+      </div>
+      <% else %>
+        <p><strong><%= appointment.user.first_name %></strong> wants to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
+      </div>
+      <% end %>
+
+      <div class="underline">
+        <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to <%= appointment.time_end.strftime("%I:%M%p") %></p>
+      </div>
+      <h3><span class="badge badge-pill badge-dark"><%= appointment.request_message %></span></h3>
+    </div>
+
+   <% if current_user == appointment.dog.user %>
+    <div>
+      <%= link_to "Accept", accept_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-success" %>
+      <%= link_to "Reject", deny_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-danger" %>
+    </div>
+    <% end %>
+
+
+
   </div>
+
+  <% end %>
+
 </div>
 
-<% end %>
+
+
+
+
+
+
+
+
