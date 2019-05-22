@@ -1,15 +1,21 @@
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 .footer {
   background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  padding: 0px 50px;
+  padding: 0 15%;
   color: rgba(0,0,0,0.3);
-  position: relative;
-  width: 100%;
   bottom: 0px;
   margin-top: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .footer-links {
   display: flex;
