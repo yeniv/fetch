@@ -88,15 +88,12 @@
   <h2>Walk requests sent 🐾</h2>
   <% @appointments_made.each do |appointment| %>
 
-  <% if appointment.status.downcase == "pending" %>
-  <% status_style = "badge badge-pill badge-primary" %>
-  <% elsif appointment.status.downcase == "accepted" %>
-  <% status_style = "badge badge-pill badge-success" %>
-  <% elsif appointment.status.downcase == "rejected" %>
-  <% status_style = "badge badge-pill badge-danger" %>
-  <% else %>
-  <% status_style = "badge badge-pill badge-secondary" %>
-  <% end %>
+  <% if appointment.status.downcase == "pending" %> <% status_style = "badge
+  badge-pill badge-primary" %> <% elsif appointment.status.downcase ==
+  "accepted" %> <% status_style = "badge badge-pill badge-success" %> <% elsif
+  appointment.status.downcase == "rejected" %> <% status_style = "badge
+  badge-pill badge-danger" %> <% else %> <% status_style = "badge badge-pill
+  badge-secondary" %> <% end %>
 
   <div class="notification col-9">
 
@@ -112,19 +109,11 @@
         <p><strong>You</strong> have requested to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
       </div>
 
-      <div class="underline">
-        <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to <%= appointment.time_end.strftime("%I:%M%p") %></p>
-      </div>
-      <h3><span class="badge badge-pill badge-dark"><%= appointment.request_message %></span></h3>
-    </div>
-  </div>
-  <% end %>
-  <% end %>
-  <br>
-  <br>
-  <br>
-  <br>
-</div>
+      <div class="underline"> <p><%= appointment.date.strftime("%A %d, %B") %>
+from <%= appointment.time_start.strftime("%I:%M%p") %> to <%=
+appointment.time_end.strftime("%I:%M%p") %></p> </div> <h3><span class="badge
+badge-pill badge-dark"><%= appointment.request_message %></span></h3> </div>
+</div> <% end %> <% end %> <br> <br> <br> <br> </div>
 
 
 
