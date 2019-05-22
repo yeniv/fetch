@@ -64,13 +64,8 @@
 
       <div class="underline">
 
-        <% if current_user == appointment.dog.user %>
-        <p><strong>You</strong> want to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
-      </div>
-      <% else %>
       <p><strong><%= appointment.user.first_name %></strong> wants to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
     </div>
-    <% end %>
 
     <div class="underline">
       <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to <%= appointment.time_end.strftime("%I:%M%p") %></p>
