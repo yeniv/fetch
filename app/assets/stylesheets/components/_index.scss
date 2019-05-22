@@ -6,6 +6,8 @@
 @import "card-all-dogs";
 @import "appointment-card";
 @import "notification";
+@import "new";
+
 #dogimg{
     border-radius: 10%;
     position: relative;
@@ -18,7 +20,7 @@
     font-size: 65px;
     font-weight: bold;
     text-align: center;
- 
+
 }
 #pofshow{
     font-size: 25px;
