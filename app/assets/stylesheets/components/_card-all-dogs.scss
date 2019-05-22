@@ -4,15 +4,14 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-row-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  padding-bottom: 100px;
 }
 
 .card-margin-border-radius {
   border-radius: 10px;
-  margin: 15px;
-  box-shadow: 10px 10px 6px -5px rgba(0,0,0,0.31);
+  box-shadow: 1px 1px 1px rgba(230,230,230,1);
 }
 
 .border-radius {
@@ -25,4 +24,13 @@
 
 .card-margin-border-radius:hover {
   box-shadow: none;
+}
+
+.card-photo {
+  height: 200px;
+  margin: 4px;
+}
+
+.card-text {
+  height: 80px;
 }
