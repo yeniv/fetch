@@ -8,3 +8,12 @@
 <p>----------</p>
 
 <% end %>
+
+<div class="card card-margin-border-radius" style="width: 18rem;">
+  <%= image_tag "casual_dogs.jpg", class: "card-img-top border-radius" %>
+  <div class="card-body">
+    <h5 class="card-title">Casual Dogs</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <%= button_to "Details", dog_path(:id), class: "btn btn-color"%>
+  </div>
+</div>

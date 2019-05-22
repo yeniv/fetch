@@ -1,0 +1,17 @@
+.card-margin-border-radius {
+  border-radius: 10px;
+  margin: 15px;
+  box-shadow: 10px 10px 6px -5px rgba(0,0,0,0.31);
+}
+
+.border-radius {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.btn-color {
+  background-color: #1BCB80;
+}
+
+.card-margin-border-radius:hover {
+  box-shadow: none;
+}
