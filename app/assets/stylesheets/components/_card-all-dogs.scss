@@ -29,6 +29,8 @@
 .card-photo {
   height: 200px;
   margin: 4px;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 .card-text {
