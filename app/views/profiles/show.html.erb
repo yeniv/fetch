@@ -1,6 +1,7 @@
 <div class="container">
-
+  <div class="page-title">
   <h1> <%= @user.first_name %> <%= @user.last_name %>'s profile </h1>
+  </div>
   <div class="profile-info">
   <div class="profile-img">
   <%= cl_image_tag @user.profile_photo, class: "profile-photo avatar-profile" %>
