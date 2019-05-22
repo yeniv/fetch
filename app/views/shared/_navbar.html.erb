@@ -36,9 +36,7 @@
       <li class="nav-item dropdown">
         <div>
           <% if user_signed_in? %>
-          <div class="profile-img">
           <img class="avatar dropdown-toggle user-avatar" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=<%= current_user.profile_photo %> />
-          </div>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if user_signed_in? %>
