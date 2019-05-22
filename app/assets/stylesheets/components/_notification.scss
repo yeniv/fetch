@@ -1,16 +1,26 @@
 .notification {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 25px;
   background: white;
-  padding: 8px 16px;
+  padding: 0;
   border: 1px solid rgb(235,235,235);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .notification .notification-content {
   flex-grow: 1;
   padding: 0 24px;
+}
+
+.notification-content {
+  padding: 20px 20px 20px 0;
+  margin-left: 15px;
+}
+
+.notification-buttons {
+  padding-right: 20px;
 }
 
 .notification p {

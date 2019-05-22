@@ -9,7 +9,19 @@ class ProfilesController < ApplicationController
     @appointments_recieved = Appointment.where(dog_id: @user.dogs)
   end
 
-  def status_color
-    "Hello"
+  private
+
+  def status_color(appointment)
+    if appointment.status.downcase == "pending"
+      return "badge badge-pill badge-primary"
+    elsif appointment.status.downcase == "accepted"
+      return "badge badge-pill badge-success"
+    elsif appointment.status.downcase == "rejected"
+      return "badge badge-pill badge-danger"
+    else
+      return "badge badge-pill badge-secondary"
+    end
   end
+
+  helper_method :status_color
 end

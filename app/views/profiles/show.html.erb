@@ -1,7 +1,5 @@
 <div class="container">
 
-  <p> <%= status_color %> </p>
-
   <h1> <%= @user.first_name %> <%= @user.last_name %>'s profile </h1>
   <div class="profile-info">
     <div class="profile-img">
@@ -59,28 +57,24 @@
 
   <div class="notification col-9">
 
-    <img src='<%= appointment.user.profile_photo %>' class="avatar-large"
+    <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
+
+    <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
     />
 
     <div class="notification-content">
-
       <div class="underline">
-
         <p><strong><%= appointment.user.first_name %></strong> wants to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
       </div>
-
       <div class="underline">
         <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to <%= appointment.time_end.strftime("%I:%M%p") %></p>
       </div>
       <h3><span class="badge badge-pill badge-dark"><%= appointment.request_message %></span></h3>
     </div>
-
-    <% if current_user == appointment.dog.user %>
-    <div>
+    <div class="notification-buttons">
       <%= link_to "Accept", accept_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-success" %>
       <%= link_to "Reject", deny_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-danger" %>
     </div>
-    <% end %>
   </div>
   <% end %>
   <% end %>
@@ -105,14 +99,16 @@
 
   <div class="notification col-9">
 
-    <img src='<%= appointment.user.profile_photo %>' class="avatar-large"
+    <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
+
+    <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
     />
 
     <div class="notification-content">
 
       <div class="underline">
 
-        <p><strong><%= appointment.user.first_name %></strong> wants to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
+        <p><strong>You</strong> have requested to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
       </div>
 
       <div class="underline">
