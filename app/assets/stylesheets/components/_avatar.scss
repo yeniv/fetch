@@ -5,8 +5,16 @@
 .avatar-large {
   width: 56px;
   border-radius: 50%;
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-profile {
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1)
 }
 .avatar-bordered {
   width: 40px;

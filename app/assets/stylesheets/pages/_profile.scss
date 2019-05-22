@@ -1,0 +1,28 @@
+.profile-info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.profile-photo {
+  margin-right: 30px;
+}
+.profile-img {
+  position: relative;
+}
+
+.profile-card {
+  flex-grow: 1
+}
+
+.profile-div-center {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-edit {
+  position: absolute;
+  left: 56px;
+  bottom: 20px;
+}
