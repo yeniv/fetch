@@ -6,10 +6,11 @@
 @import "card-all-dogs";
 @import "appointment-card";
 @import "notification";
-<<<<<<< HEAD
+
 @import "product";
 
-=======
+@import "new";
+
 #dogimg{
     border-radius: 10%;
     position: relative;
@@ -22,7 +23,7 @@
     font-size: 65px;
     font-weight: bold;
     text-align: center;
- 
+
 }
 #pofshow{
     font-size: 25px;
@@ -39,4 +40,4 @@
 //     font-weight: bold;
 //     text-align: center;
 // }
->>>>>>> bf8d26bec35c70559d027723e8711f1741527743
+
