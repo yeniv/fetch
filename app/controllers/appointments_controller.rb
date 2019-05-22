@@ -3,6 +3,17 @@ class AppointmentsController < ApplicationController
   end
 
   def accept
+    @appointment = Appointment.find(params[:id])
+    @appointment.status = "Accepted"
+    @appointment.save
+    redirect_to profile_path(current_user)
+  end
+
+  def deny
+    @appointment = Appointment.find(params[:id])
+    @appointment.status = "Rejected"
+    @appointment.save
+    redirect_to profile_path(current_user)
   end
 
   def show
@@ -15,11 +26,14 @@ class AppointmentsController < ApplicationController
   # end
 
   def create
-    @dog = Dog.find(params[:id])
+    @dog = Dog.find(params[:dog_id])
     @appointment = Appointment.new(appointment_params)
 
+    @appointment.user = current_user
+    @appointment.dog = @dog
+
     if @appointment.save
-      redirect_to profile_path # (current_user)
+      redirect_to profile_path(current_user)
     else
       render :new
     end
@@ -28,6 +42,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointments).permit(:request_message, :date, :time_start, :time_start)
+    params.require(:appointment).permit(:request_message, :date, :time_start, :time_end)
   end
 end
