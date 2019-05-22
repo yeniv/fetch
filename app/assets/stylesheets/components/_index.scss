@@ -8,34 +8,4 @@
 @import "notification";
 @import "product";
 @import "new";
-
-#dogimg{
-    border-radius: 10%;
-    position: relative;
-    text-align: center
-}
-#h1ofshow{
-    margin: 0;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-size: 65px;
-    font-weight: bold;
-    text-align: center;
-
-}
-#pofshow{
-    font-size: 25px;
-    color: white;
-    opacity: .7;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-// h3{
-//     margin: 0;
-//     color: white;
-//     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-//     font-size: 25px;
-//     font-weight: bold;
-//     text-align: center;
-// }
-
+@import "detailsdog"
