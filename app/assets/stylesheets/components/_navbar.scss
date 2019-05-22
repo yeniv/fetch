@@ -11,6 +11,11 @@
   flex-grow: 0;
 }
 
+.navbar-brand {
+  position: relative;
+  left: 30px;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
@@ -29,3 +34,7 @@
   padding-bottom: 5px;
 }
 
+.user-avatar {
+  position: relative;
+  right: 30px;
+}
