@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_21_083326) do
+ActiveRecord::Schema.define(version: 2019_05_21_163518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "pending"
     t.bigint "user_id"
     t.bigint "dog_id"
-    t.string "request_message"
+    t.text "request_message"
     t.date "date"
     t.time "time_start"
     t.time "time_end"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2019_05_21_083326) do
     t.string "name"
     t.string "breed"
     t.string "gender"
-    t.string "age"
-    t.string "description"
+    t.integer "age"
+    t.text "description"
     t.string "photo"
     t.string "location"
     t.datetime "created_at", null: false
@@ -51,11 +51,11 @@ ActiveRecord::Schema.define(version: 2019_05_21_083326) do
     t.datetime "remember_created_at"
     t.string "first_name"
     t.string "last_name"
-    t.string "profile_picture"
     t.string "about"
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
