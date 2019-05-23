@@ -7,6 +7,17 @@ class DogsController < ApplicationController
     else
       @dogs = Dog.all
     end
+
+    @dogs_markers = @dogs.where.not(latitude: nil, longitude: nil)
+
+    @markers = @dogs_markers.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { dog: dog }),
+        image_url: helpers.asset_url('marker1.png')
+      }
+    end
   end
 
   def show
