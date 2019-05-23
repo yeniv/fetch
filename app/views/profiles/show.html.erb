@@ -2,32 +2,36 @@
   <div class="page-title">
     <h1> <%= @user.first_name %> <%= @user.last_name %>'s profile </h1>
   </div>
-  <div class="profile-info">
-    <div class="profile-img">
-      <%= cl_image_tag @user.profile_photo, class: "profile-photo avatar-profile" %>
-      <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-sm btn-success profile-edit" %>
-    </div>
-    <div class="card">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <h6 class="card-subtitle mb-2 text-muted">Email</h6>
-          <%= @user.email %>
-        </li>
-        <li class="list-group-item">
-          <h6 class="card-subtitle mb-2 text-muted">About</h6>
-          <%= @user.about %>
-        </li>
-        <li class="list-group-item">
-          <h6 class="card-subtitle mb-2 text-muted">Mobile</h6>
-          <%= @user.phone_number %>
-        </li>
-      </ul>
+
+  <div class="top-half">
+    <div class="profile-about">
+      <div class="profile-info">
+        <div class="profile-img">
+          <%= cl_image_tag @user.profile_photo, class: "profile-photo avatar-profile" %>
+          <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-sm btn-success profile-edit" %>
+        </div>
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h6 class="card-subtitle mb-2 text-muted">Email</h6>
+              <%= @user.email %>
+            </li>
+            <li class="list-group-item">
+              <h6 class="card-subtitle mb-2 text-muted">About</h6>
+              <%= @user.about %>
+            </li>
+            <li class="list-group-item">
+              <h6 class="card-subtitle mb-2 text-muted">Mobile</h6>
+              <%= @user.phone_number %>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-  </div>
 
   <h2>Your listed dogs 🐶</h2>
-  <div class="grid-container">
+  <div class="dog-index-card-grid">
     <% @user.dogs.each do |dog| %>
     <div class="card card-margin-border-radius card-profile">
       <img src='<%= dog.photo %>' , class="card-photo" />
@@ -39,89 +43,105 @@
         <%= link_to "Edit dog", edit_dog_path(dog), class: "btn btn-flat"%>
       </div>
     </div>
+  </div>
+
+  <div class="requests-profile">
+    <% if @appointments_recieved.present? %>
+
+    <h2>Walk requests recieved 🐾</h2>
+    <% @appointments_recieved.each do |appointment| %>
+
+    <% if appointment.status.downcase == "pending" %>
+    <% status_style = "badge badge-pill badge-primary" %>
+    <% elsif appointment.status.downcase == "accepted" %>
+    <% status_style = "badge badge-pill badge-success" %>
+    <% elsif appointment.status.downcase == "rejected" %>
+    <% status_style = "badge badge-pill badge-danger" %>
+    <% else %>
+    <% status_style = "badge badge-pill badge-secondary" %>
     <% end %>
-  </div>
 
-  <% if @appointments_recieved.present? %>
+    <div class="notification col-9">
 
-  <h2>Walk requests recieved 🐾</h2>
-  <% @appointments_recieved.each do |appointment| %>
+      <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
 
-  <% if appointment.status.downcase == "pending" %>
-  <% status_style = "badge badge-pill badge-primary" %>
-  <% elsif appointment.status.downcase == "accepted" %>
-  <% status_style = "badge badge-pill badge-success" %>
-  <% elsif appointment.status.downcase == "rejected" %>
-  <% status_style = "badge badge-pill badge-danger" %>
-  <% else %>
-  <% status_style = "badge badge-pill badge-secondary" %>
-  <% end %>
 
-  <div class="notification col-9">
+      <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
+      />
 
-    <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
-
-    <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar" />
-
-    <div class="notification-content">
-      <div class="underline">
-        <p><strong><%= appointment.user.first_name %></strong> wants to walk
-          <strong><%= appointment.dog.name %></strong> <span
-            class="<%= status_style %>"><%= appointment.status %></span></p>
+      <div class="notification-content">
+        <div class="underline">
+          <p><strong><%= appointment.user.first_name %></strong> wants to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
+        </div>
+        <div class="underline">
+          <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to <%= appointment.time_end.strftime("%I:%M%p") %></p>
+        </div>
+        <h3><span class="badge badge-pill badge-dark"><%= appointment.request_message %></span></h3>
       </div>
-      <div class="underline">
-        <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to
-          <%= appointment.time_end.strftime("%I:%M%p") %></p>
+      <div class="notification-buttons">
+        <%= link_to "Accept", accept_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-success" %>
+        <%= link_to "Reject", deny_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-danger" %>
       </div>
-      <h3><span class="badge badge-pill badge-dark"><%= appointment.request_message %></span></h3>
     </div>
-    <div class="notification-buttons">
-      <%= link_to "Accept", accept_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-success" %>
-      <%= link_to "Reject", deny_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-danger" %>
-    </div>
-  </div>
-  <% end %>
-  <% end %>
+    <% end %>
+    <% end %>
 
-  <br>
-  <br>
+    <br>
+    <br>
 
-  <% if @appointments_made.present? %>
+    <% if @appointments_made.present? %>
 
-  <h2>Walk requests sent 🐾</h2>
-  <% @appointments_made.each do |appointment| %>
+    <h2>Walk requests sent 🐾</h2>
+    <% @appointments_made.each do |appointment| %>
 
-  <% if appointment.status.downcase == "pending" %> <% status_style = "badge
-  badge-pill badge-primary" %> <% elsif appointment.status.downcase ==
-  "accepted" %> <% status_style = "badge badge-pill badge-success" %> <% elsif
-  appointment.status.downcase == "rejected" %> <% status_style = "badge
-  badge-pill badge-danger" %> <% else %> <% status_style = "badge badge-pill
-  badge-secondary" %> <% end %>
+    <% if appointment.status.downcase == "pending" %> <% status_style = "badge
+      badge-pill badge-primary" %> <% elsif appointment.status.downcase ==
+      "accepted" %> <% status_style = "badge badge-pill badge-success" %> <% elsif
+      appointment.status.downcase == "rejected" %> <% status_style = "badge
+      badge-pill badge-danger" %> <% else %> <% status_style = "badge badge-pill
+      badge-secondary" %> <% end %>
 
-  <div class="notification col-9">
+      <div class="notification col-9">
 
-    <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
+        <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
 
-    <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar" />
 
-    <div class="notification-content">
+        <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
+        />
 
-      <div class="underline">
 
-        <p><strong>You</strong> have requested to walk <strong><%= appointment.dog.name %></strong> <span
-            class="<%= status_style %>"><%= appointment.status %></span></p>
+        <div class="notification-content">
+
+          <div class="underline">
+
+
+            <p><strong>You</strong> have requested to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
+          </div>
+
+          <div class="underline"> <p><%= appointment.date.strftime("%A %d, %B") %>
+            from <%= appointment.time_start.strftime("%I:%M%p") %> to <%=
+            appointment.time_end.strftime("%I:%M%p") %></p>
+          </div>
+          <h3><span class="badge
+            badge-pill badge-dark"><%= appointment.request_message %></span></h3>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
-
-      <div class="underline">
-        <p><%= appointment.date.strftime("%A %d, %B") %>
-          from <%= appointment.time_start.strftime("%I:%M%p") %> to <%=
-appointment.time_end.strftime("%I:%M%p") %></p>
-      </div>
-      <h3><span class="badge
-badge-pill badge-dark"><%= appointment.request_message %></span></h3>
     </div>
-  </div> <% end %> <% end %> <br> <br> <br> <br>
-</div>
+
+
+    <%= render 'shared/footer' %>
+
+
+
+
+
 
 
 <%= render 'shared/footer' %>
