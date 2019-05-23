@@ -1,5 +1,8 @@
 .dog-index-container {
   // background-color: #ffc511;
+  h1 {
+    padding-top: 30px;
+  }
 }
 
 .page-title {
@@ -12,8 +15,9 @@
   // width: 100%;
   // margin: 0 auto;
   border-radius: 10px;
-  padding: 30px 100px;
+  padding: 25px 140px;
   margin-bottom: 50px;
+  font-size: 20px;
 }
 
 .dog-index-container {
@@ -38,7 +42,10 @@
 
 .dog-index-map {
   // position: absolute;
+}
 
+.search-bar-dog-index {
+  font-size: 40px;
 }
 
 .dog-index-card-grid {

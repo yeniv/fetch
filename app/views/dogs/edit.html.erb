@@ -9,3 +9,4 @@
 <%= f.input :photo_cache, as: :hidden %>
 <%= f.button :submit, class: "btn btn-success btn-lg" %>
 <% end %>
+<%= link_to "Delete", dog_path(@dog),method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
