@@ -13,8 +13,8 @@
       class: "form-control search-bar",
         placeholder: "Search by location"
         %>
-    </div>
       <% end %>
+    </div>
 
     <div class="dog-index-card-grid">
       <%  @dogs.each do |dog|  %>
@@ -41,6 +41,5 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>
   </div>
-</div>
 
-<%= render 'shared/footer' %>
+</div>
