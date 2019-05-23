@@ -34,14 +34,13 @@
   <div class="dog-index-card-grid">
     <% @user.dogs.each do |dog| %>
     <div class="card card-margin-border-radius card-profile">
-      <img src='<%= dog.photo %>', class="card-photo" />
+      <img src='<%= dog.photo %>' , class="card-photo" />
       <div class="card-body">
         <h5 class="card-title"><%= dog.name %></h5>
         <p class="card-text"><%= dog.location %></p>
         <p class="card-text"> <%= dog.description %> </p>
         <%= link_to "Details", dog_path(dog), class: "btn btn-flat"%>
         <%= link_to "Edit dog", edit_dog_path(dog), class: "btn btn-flat"%>
-        <%= link_to "Eliminate dog", dog_path(dog), class: "btn btn-flat"%>
       </div>
     </div>
   </div>
@@ -65,6 +64,7 @@
     <div class="notification col-9">
 
       <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
+
 
       <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
       />
@@ -105,12 +105,15 @@
 
         <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
 
+
         <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
         />
+
 
         <div class="notification-content">
 
           <div class="underline">
+
 
             <p><strong>You</strong> have requested to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
           </div>
@@ -140,3 +143,5 @@
 
 
 
+
+<%= render 'shared/footer' %>
