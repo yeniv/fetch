@@ -1,5 +1,5 @@
 .profile-info {
-  display: flex;
+  // display: flex;
   align-items: center;
   padding: 20px;
   margin-bottom: 40px;
@@ -8,12 +8,13 @@
 .profile-photo {
   width: 250px;
   height: 250px;
-  margin-right: 30px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 .profile-img {
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-card {
@@ -27,6 +28,17 @@
 
 .profile-edit {
   position: absolute;
-  left: 80px;
-  bottom: -5px;
+  bottom: 30px;
+}
+
+.top-half {
+ display: flex;
+}
+
+.profile-about {
+
+}
+
+.dogs-list {
+
 }
