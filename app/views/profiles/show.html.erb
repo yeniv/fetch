@@ -36,6 +36,8 @@
         <p class="card-text"><%= dog.location %></p>
         <p class="card-text"> <%= dog.description %> </p>
         <%= link_to "Details", dog_path(dog), class: "btn btn-flat"%>
+        <%= link_to "Edit dog", edit_dog_path(dog), class: "btn btn-flat"%>
+        <%= link_to "Eliminate dog", dog_path(dog), class: "btn btn-flat"%>
       </div>
     </div>
     <% end %>
