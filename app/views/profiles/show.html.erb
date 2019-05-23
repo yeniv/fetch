@@ -1,6 +1,6 @@
 <div class="container">
   <div class="page-title">
-  <h1> <%= @user.first_name %> <%= @user.last_name %>'s profile </h1>
+    <h1> <%= @user.first_name %> <%= @user.last_name %>'s profile </h1>
   </div>
   <div class="profile-info">
     <div class="profile-img">
@@ -30,14 +30,13 @@
   <div class="grid-container">
     <% @user.dogs.each do |dog| %>
     <div class="card card-margin-border-radius card-profile">
-      <img src='<%= dog.photo %>', class="card-photo" />
+      <img src='<%= dog.photo %>' , class="card-photo" />
       <div class="card-body">
         <h5 class="card-title"><%= dog.name %></h5>
         <p class="card-text"><%= dog.location %></p>
         <p class="card-text"> <%= dog.description %> </p>
         <%= link_to "Details", dog_path(dog), class: "btn btn-flat"%>
         <%= link_to "Edit dog", edit_dog_path(dog), class: "btn btn-flat"%>
-        <%= link_to "Eliminate dog", dog_path(dog), class: "btn btn-flat"%>
       </div>
     </div>
     <% end %>
@@ -62,15 +61,17 @@
 
     <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
 
-    <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
-    />
+    <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar" />
 
     <div class="notification-content">
       <div class="underline">
-        <p><strong><%= appointment.user.first_name %></strong> wants to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
+        <p><strong><%= appointment.user.first_name %></strong> wants to walk
+          <strong><%= appointment.dog.name %></strong> <span
+            class="<%= status_style %>"><%= appointment.status %></span></p>
       </div>
       <div class="underline">
-        <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to <%= appointment.time_end.strftime("%I:%M%p") %></p>
+        <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to
+          <%= appointment.time_end.strftime("%I:%M%p") %></p>
       </div>
       <h3><span class="badge badge-pill badge-dark"><%= appointment.request_message %></span></h3>
     </div>
@@ -101,27 +102,26 @@
 
     <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
 
-    <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
-    />
+    <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar" />
 
     <div class="notification-content">
 
       <div class="underline">
 
-        <p><strong>You</strong> have requested to walk <strong><%= appointment.dog.name %></strong> <span class="<%= status_style %>"><%= appointment.status %></span></p>
+        <p><strong>You</strong> have requested to walk <strong><%= appointment.dog.name %></strong> <span
+            class="<%= status_style %>"><%= appointment.status %></span></p>
       </div>
 
-      <div class="underline"> <p><%= appointment.date.strftime("%A %d, %B") %>
-from <%= appointment.time_start.strftime("%I:%M%p") %> to <%=
-appointment.time_end.strftime("%I:%M%p") %></p> </div> <h3><span class="badge
-badge-pill badge-dark"><%= appointment.request_message %></span></h3> </div>
-</div> <% end %> <% end %> <br> <br> <br> <br> </div>
+      <div class="underline">
+        <p><%= appointment.date.strftime("%A %d, %B") %>
+          from <%= appointment.time_start.strftime("%I:%M%p") %> to <%=
+appointment.time_end.strftime("%I:%M%p") %></p>
+      </div>
+      <h3><span class="badge
+badge-pill badge-dark"><%= appointment.request_message %></span></h3>
+    </div>
+  </div> <% end %> <% end %> <br> <br> <br> <br>
+</div>
 
 
- <%= render 'shared/footer' %>
-
-
-
-
-
-
+<%= render 'shared/footer' %>
