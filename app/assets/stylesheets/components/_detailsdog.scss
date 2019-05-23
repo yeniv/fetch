@@ -18,18 +18,28 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
-// h3{
-//     margin: 0;
-//     color: white;
-//     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-//     font-size: 25px;
-//     font-weight: bold;
-//     text-align: center;
-// }
 
 .btn-success{
     display: flex;
     margin-right: -51px;
     border-radius: 2%;
-    text-align: center
+}
+.ctrbtn{
+    width: 350px;
+    height: 50px;
+    // margin: 0 auto;
+    // padding: 0;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+    // margin-left: -10px;
+}
+.mgnr{
+    width: 340px;
+    display: inline-block;
+    text-align: center;
+}
+.shawdow{
+
 }
