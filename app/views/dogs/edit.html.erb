@@ -1,0 +1,11 @@
+<%= simple_form_for @dog do |f| %>
+<%= f.input :name%>
+<%= f.input :breed%>
+<%= f.input :gender, collection: ["Male", "Female", "Unspecified"]%>
+<%= f.input :age%>
+<%= f.input :description %>
+<%= f.input :location %>
+<%= f.input :photo%>
+<%= f.input :photo_cache, as: :hidden %>
+<%= f.button :submit, class: "btn btn-success btn-lg" %>
+<% end %>

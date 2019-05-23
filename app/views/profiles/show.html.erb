@@ -29,20 +29,19 @@
       </div>
     </div>
 
-    <div class="dogs-list">
-      <h2>Your listed dogs 🐶</h2>
-      <div class="dog-index-card-grid">
-        <% @user.dogs.each do |dog| %>
-        <div class="card card-margin-border-radius card-profile">
-          <img src='<%= dog.photo %>', class="card-photo" />
-          <div class="card-body">
-            <h5 class="card-title"><%= dog.name %></h5>
-            <p class="card-text"><%= dog.location %></p>
-            <p class="card-text"> <%= dog.description %> </p>
-            <%= link_to "Details", dog_path(dog), class: "btn btn-flat"%>
-          </div>
-        </div>
-        <% end %>
+
+  <h2>Your listed dogs 🐶</h2>
+  <div class="dog-index-card-grid">
+    <% @user.dogs.each do |dog| %>
+    <div class="card card-margin-border-radius card-profile">
+      <img src='<%= dog.photo %>', class="card-photo" />
+      <div class="card-body">
+        <h5 class="card-title"><%= dog.name %></h5>
+        <p class="card-text"><%= dog.location %></p>
+        <p class="card-text"> <%= dog.description %> </p>
+        <%= link_to "Details", dog_path(dog), class: "btn btn-flat"%>
+        <%= link_to "Edit dog", edit_dog_path(dog), class: "btn btn-flat"%>
+        <%= link_to "Eliminate dog", dog_path(dog), class: "btn btn-flat"%>
       </div>
     </div>
   </div>
