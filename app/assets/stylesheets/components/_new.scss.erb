@@ -1,18 +1,41 @@
 .bckgroundnew {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= image_path "new-dog.jpg" %>');
     background-size: 100%;
-
-}
-
-.text h1 {
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
 }
 
 label {
-    font-size: 25px;
-    opacity: .7;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
     text-align: center;
     vertical-align: middle;
+}
+
+.container {
+  background-color: white;
+  padding: 20px 30px;
+  width: 500px;
+  border-radius: 10px;
+  border: solid;
+  border-color: #cecece;
+  border-width: 0.5px;
+}
+
+.justify-content-center {
+  padding: 20px 30px;
+}
+
+.margin-input {
+  margin: 30px;
+  margin-bottom: 85px;
+}
+
+.btn-border-radius {
+  border-radius: 10px;
+  background-color: #1EDD7B;
+  color: white;
+}
+
+.form-control {
+  border-radius: 10px;
 }
