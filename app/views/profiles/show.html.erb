@@ -5,7 +5,7 @@
   <div class="profile-info">
     <div class="profile-img">
       <%= cl_image_tag @user.profile_photo, class: "profile-photo avatar-profile" %>
-      <%= link_to "Edit profile", root_path, class: "btn btn-sm btn-success profile-edit" %>
+      <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-sm btn-success profile-edit" %>
     </div>
     <div class="card">
       <ul class="list-group list-group-flush">
@@ -36,6 +36,8 @@
         <p class="card-text"><%= dog.location %></p>
         <p class="card-text"> <%= dog.description %> </p>
         <%= link_to "Details", dog_path(dog), class: "btn btn-flat"%>
+        <%= link_to "Edit dog", edit_dog_path(dog), class: "btn btn-flat"%>
+        <%= link_to "Eliminate dog", dog_path(dog), class: "btn btn-flat"%>
       </div>
     </div>
     <% end %>
@@ -116,7 +118,7 @@ badge-pill badge-dark"><%= appointment.request_message %></span></h3> </div>
 </div> <% end %> <% end %> <br> <br> <br> <br> </div>
 
 
-
+ <%= render 'shared/footer' %>
 
 
 

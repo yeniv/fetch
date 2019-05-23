@@ -1,34 +1,20 @@
 <div class="bckgroundnew">
-
-  <div class="container justify-content-center text">
-
-    <div class="row justify-content-center">
-
-      <div class="col-4 mt-5 mb-5">
-
-        <h1>Add your Doggo!</h1>
-
-        <%= simple_form_for @dog do |f| %>
-        <%= f.input :name%>
-        <%= f.input :breed%>
-        <%= f.input :gender, collection: ["Male", "Female", "Unspecified"]%>
-        <%= f.input :age%>
-        <%= f.input :description %>
-        <%= f.input :location %>
-        <%= f.input :photo%>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.button :submit, class: "btn btn-success btn-lg" %>
-
-        <% end %>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
-
+  <div class="margin-input">
+    <div class="container2 justify-content-center text">
+          <h1>Add your Doggo!</h1>
+          <%= simple_form_for @dog do |f| %>
+          <%= f.input :name%>
+          <%= f.input :breed%>
+          <%= f.input :gender, collection: ["Male", "Female", "Unspecified"]%>
+          <%= f.input :age%>
+          <%= f.input :description %>
+          <%= f.input :location %>
+          <%= f.input :photo%>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, class: "btn btn-lg btn-border-radius" %>
+          <% end %>
     </div>
-
   </div>
-
 </div>
+
+ <%= render 'shared/footer' %>
