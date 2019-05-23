@@ -2,9 +2,9 @@
 
 puts "Wiping DB clean..."
 
+Appointment.delete_all
 Dog.delete_all
 User.delete_all
-# Appointment.delete_all
 
 # CREATE USERS
 
