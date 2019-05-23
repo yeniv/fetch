@@ -1,6 +1,6 @@
 .margin-btn {
   margin: 10px;
-  background-color: #1EDD7B;
+  background-color: #ffb200;
   border-radius: 10px;
   color: white;
   padding: 10px;
@@ -14,7 +14,7 @@
   border-color: #cecece;
   border-width: 0.5px;
   padding: 20px 30px;
-  margin-bottom: 70px;
+  margin: 25px 0 25px 30px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.08);
@@ -24,6 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(circle, rgba(252,190,70,1) 15%, rgba(252,248,70,1) 100%);
 }
 
 .input-css {
