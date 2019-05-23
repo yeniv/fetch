@@ -1,27 +1,24 @@
-<div class="container">
-  <div class="page-title">
-    <h1> Browse your new doggo friend </h1>
-  </div>
+<div class="dog-index-container">
 
-  <div class="d-flex justify-content-center">
-    <%= form_tag dogs_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control search-bar",
-      placeholder: "Find a dog by location"
-      %>
+  <div class="dog-index-content">
+    <h1>dog index content</h1>
+
+
+    <div class="page-title">
+      <h1> Browse your new doggo friend </h1>
     </div>
-    <% end %>
 
-    <div
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+    <div class="d-flex justify-content-center">
+      <%= form_tag dogs_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control search-bar",
+        placeholder: "Find a dog by location"
+        %>
+    </div>
+      <% end %>
 
-    <div class="grid-container">
+    <div class="dog-index-card-grid">
       <%  @dogs.each do |dog|  %>
       <div class="card card-margin-border-radius">
         <img src='<%= dog.photo %>', class="card-photo" />
@@ -34,5 +31,18 @@
       </div>
       <% end %>
     </div>
-
   </div>
+
+  <div class="dog-index-map-container">
+    <h1>dog index map container</h1>
+    <div
+    class="dog-index-map"
+    id="map"
+    style="width: 100%;
+    height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+
+</div>

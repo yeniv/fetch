@@ -11,3 +11,60 @@
   padding: 30px 100px;
   margin-bottom: 30px;
 }
+
+.dog-index-container {
+  // width: 100%;
+  display: flex;
+}
+
+.dog-index-content {
+  flex-grow: 2;
+  background-color: red;
+}
+
+.dog-index-map-container {
+  position: relative;
+  flex-grow: 1;
+  background-color: blue;
+}
+
+.dog-index-card-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  // display: grid;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .dog-index-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .dog-index-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .dog-index-card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .dog-index-card-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .dog-index-card-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
