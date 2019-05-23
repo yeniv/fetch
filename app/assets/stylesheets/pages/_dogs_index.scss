@@ -1,3 +1,7 @@
+.dog-index-container {
+  background-color: yellow;
+}
+
 .page-title {
   text-align: center;
   padding: 30px 0;
@@ -9,29 +13,38 @@
   // margin: 0 auto;
   border-radius: 10px;
   padding: 30px 100px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .dog-index-container {
   // width: 100%;
   display: flex;
+  position: relative;
 }
 
 .dog-index-content {
-  flex-grow: 2;
-  background-color: red;
+  padding: 0 60px 100px 40px;
+  width: 65%;
 }
 
 .dog-index-map-container {
-  position: relative;
-  flex-grow: 1;
-  background-color: blue;
+  width: 35%;
+}
+
+#map {
+  position: sticky;
+  top: 0;
+}
+
+.dog-index-map {
+  // position: absolute;
+
 }
 
 .dog-index-card-grid {
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  // display: grid;
+  grid-gap: 30px;
+  display: grid;
 }
 
 // Smallest device
@@ -56,11 +69,11 @@
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .dog-index-card-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+// @media (min-width: 992px) {
+//   .dog-index-card-grid {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
