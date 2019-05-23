@@ -5,7 +5,7 @@
   <div class="profile-info">
     <div class="profile-img">
       <%= cl_image_tag @user.profile_photo, class: "profile-photo avatar-profile" %>
-      <%= link_to "Edit profile", root_path, class: "btn btn-sm btn-success profile-edit" %>
+      <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-sm btn-success profile-edit" %>
     </div>
     <div class="card">
       <ul class="list-group list-group-flush">
