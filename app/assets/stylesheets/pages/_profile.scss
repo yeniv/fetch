@@ -6,15 +6,17 @@
 }
 
 .profile-photo {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
+
   object-fit: cover;
 }
 
 .profile-img {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .profile-card {
@@ -29,16 +31,13 @@
 .profile-edit {
   position: absolute;
   bottom: 30px;
+  border-radius: 5px;
+}
+
+.profile-about {
+  margin-right: 50px;
 }
 
 .top-half {
  display: flex;
-}
-
-.profile-about {
-
-}
-
-.dogs-list {
-
 }

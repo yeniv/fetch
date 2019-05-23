@@ -4,9 +4,9 @@
   </div>
 
   <div class="top-half">
-    <div class="profile-about">
+    <div class="profile-about col-4">
       <div class="profile-info">
-        <div class="profile-img">
+        <div class="profile-img pb-4">
           <%= cl_image_tag @user.profile_photo, class: "profile-photo avatar-profile" %>
           <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-sm btn-success profile-edit" %>
         </div>
@@ -29,22 +29,6 @@
       </div>
     </div>
 
-
-  <h2>Your listed dogs 🐶</h2>
-  <div class="dog-index-card-grid">
-    <% @user.dogs.each do |dog| %>
-    <div class="card card-margin-border-radius card-profile">
-      <img src='<%= dog.photo %>' , class="card-photo" />
-      <div class="card-body">
-        <h5 class="card-title"><%= dog.name %></h5>
-        <p class="card-text"><%= dog.location %></p>
-        <p class="card-text"> <%= dog.description %> </p>
-        <%= link_to "Details", dog_path(dog), class: "btn btn-flat"%>
-        <%= link_to "Edit dog", edit_dog_path(dog), class: "btn btn-flat"%>
-      </div>
-    </div>
-  </div>
-
   <div class="requests-profile">
     <% if @appointments_recieved.present? %>
 
@@ -61,13 +45,13 @@
     <% status_style = "badge badge-pill badge-secondary" %>
     <% end %>
 
-    <div class="notification col-9">
+    <div class="notification">
 
       <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
 
 
-      <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"
-      />
+      <img src='<%= appointment.user.profile_photo %>' class="avatar-large appointment-avatar"/>
+
 
       <div class="notification-content">
         <div class="underline">
@@ -101,7 +85,7 @@
       badge-pill badge-danger" %> <% else %> <% status_style = "badge badge-pill
       badge-secondary" %> <% end %>
 
-      <div class="notification col-9">
+      <div class="notification">
 
         <div style="background-image: url(<%= appointment.dog.photo %>)" class="appointment-card-img"></div>
 
@@ -128,15 +112,34 @@
         </div>
         <% end %>
         <% end %>
-        <br>
-        <br>
-        <br>
-        <br>
       </div>
+
     </div>
 
+    <h2 class="text-center page-title">Your listed dogs 🐶</h2>
+    <div class="cards">
+      <div class="row">
+      <% @user.dogs.each do |dog| %>
+      <div class="card-category card-margin-border-radius card-profile col-4">
+        <img src='<%= dog.photo %>', class="card-photo" />
+        <div class="card-body">
+          <h5 class="card-title"><%= dog.name %></h5>
+          <p class="card-text"> <%= dog.description %> </p>
+          <%= link_to "Update", edit_dog_path(dog), class: "btn btn-primary"%>
+          <%= link_to "Remove", dog_path(dog), class: "btn btn-danger"%>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
-    <%= render 'shared/footer' %>
+
+
+<%#= render 'shared/footer' %>
 
 
 
