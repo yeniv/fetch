@@ -14,7 +14,8 @@ class DogsController < ApplicationController
       {
         lat: dog.latitude,
         lng: dog.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { dog: dog })
+        infoWindow: render_to_string(partial: "infowindow", locals: { dog: dog }),
+        image_url: helpers.asset_url('marker1.png')
       }
     end
   end
