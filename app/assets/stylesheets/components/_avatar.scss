@@ -6,9 +6,11 @@
 }
 .avatar-large {
   width: 56px;
+  height: 56px;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+  object-fit: cover;
 }
 .avatar-profile {
   width: 200px;
