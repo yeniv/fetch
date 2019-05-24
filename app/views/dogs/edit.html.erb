@@ -1,23 +1,25 @@
 <div class="background-color">
-        <div class="container width">
-            <div class="bg-margin">
-              <div class="page-title">
-<%= simple_form_for @dog do |f| %>
-<%= f.input :name%>
-<%= f.input :breed%>
-<%= f.input :gender, collection: ["Male", "Female", "Unspecified"]%>
-<%= f.input :age%>
-<%= f.input :description %>
-<%= f.input :location %>
-<%= f.input :photo%>
-<%= f.input :photo_cache, as: :hidden %>
-<div class="btn-in-middle upd">
-<%= f.button :submit, class: "btn btn-success btn-lg" %>
-</div>
-<% end %>
-<div class="btn-in-middle mdl">
-<%= link_to "Delete", dog_path(@dog),method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-</div>
-</div>
-</div>
-</div>
+  <div class="container width">
+    <div class="bg-margin">
+      <div class="page-title">
+        <h2>Edit dog</h2>
+
+        <%= simple_form_for @dog do |f| %>
+        <%= f.input :name%>
+        <%= f.input :breed%>
+        <%= f.input :gender, collection: ["Male", "Female", "Unspecified"]%>
+        <%= f.input :age%>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :photo%>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="edit-btnc">
+          <%= f.button :submit, class: "mdla upd btn-lg "%>
+        </div>
+        <% end %>
+        <div class="mdle">
+          <%= link_to "Delete", dog_path(@dog),method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
