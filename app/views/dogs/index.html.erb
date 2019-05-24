@@ -18,7 +18,7 @@
 
     <div class="dog-index-card-grid">
       <%  @dogs.each do |dog|  %>
-      <div class="card card-index-height card-margin-border-radius">
+      <div id="card-<%=dog.id%>", class="card card-index-height card-margin-border-radius">
         <img src='<%= dog.photo %>', class="card-photo" />
         <div class="card-body" style="text-align: center;">
           <h3 class="card-title"><%= dog.name %></h3>

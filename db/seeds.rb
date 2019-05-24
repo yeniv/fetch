@@ -114,7 +114,7 @@ beagle = Dog.new(
   age: '5',
   description: 'Can hear everything. Even your secrets. Beware.',
   photo: Pathname.new("./app/assets/images/seed-dog/beagle.jpg").open,
-  location: 'Wenaahof 19, Amsterdam',
+  location: 'Wibautstraat 20, Amsterdam',
 )
 
 beagle.user = joao
