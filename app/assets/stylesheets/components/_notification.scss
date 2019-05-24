@@ -8,6 +8,11 @@
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 750px;
+  border-radius: 7px;
+  .appointment-card-img {
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+  }
 }
 
 .notification .notification-content {
@@ -23,9 +28,6 @@
 .notification-buttons {
   width: 120px;
   height: 100px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
 }
 
 .notification p {
