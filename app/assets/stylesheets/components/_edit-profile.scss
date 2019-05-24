@@ -35,8 +35,11 @@
   }
 
   .mdl {
-    align-content: center;
+   display: flex;
+   text-align: center;
+   align-items: center;
+   padding-left: 41%;
+   padding-bottom: 2%;
 
-    
   }
   
