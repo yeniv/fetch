@@ -7,11 +7,12 @@
   border: 1px solid rgb(235,235,235);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   position: relative;
+  width: 750px;
 }
 
 .notification .notification-content {
   flex-grow: 1;
-  padding: 0 24px;
+  padding-left: 24px;
 }
 
 .notification-content {
@@ -20,7 +21,11 @@
 }
 
 .notification-buttons {
-  padding-right: 20px;
+  width: 120px;
+  height: 100px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .notification p {
@@ -60,4 +65,20 @@
 
 .white-badge h3 {
   font-color: white;
+}
+
+.request-message {
+  font-weight: 400;
+  padding-left: 0;
+  font-size: 18px;
+}
+
+.ex1 {
+  max-width: 500px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.button-width {
+  width: 80px;
 }
