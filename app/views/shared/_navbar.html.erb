@@ -10,17 +10,12 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item padding-navbar">
         <div class="hover-border-bottom">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Find dog to walk", dogs_path, class: "nav-link" %>
         </div>
       </li>
       <li class="nav-item padding-navbar">
         <div class="hover-border-bottom">
-          <%= link_to "Browse dogs", dogs_path, class: "nav-link" %>
-        </div>
-      </li>
-      <li class="nav-item padding-navbar">
-        <div class="hover-border-bottom">
-          <%= link_to "Add a dog", new_dog_path, class: "nav-link"  %>
+          <%= link_to "Add your dog", new_dog_path, class: "nav-link"  %>
           <%#= link_to 'Add a dog', new_dog_path, data: {toggle: "modal", target: "#modal"}, class: "nav-link" %>
         </div>
       </li>
