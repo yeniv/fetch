@@ -126,7 +126,7 @@
           <h5 class="card-title"><%= dog.name %></h5>
           <p class="card-text"> <%= dog.description %> </p>
           <%= link_to "Update", edit_dog_path(dog), class: "btn btn-primary"%>
-          <%= link_to "Remove", dog_path(dog), class: "btn btn-danger"%>
+          <%= link_to "Delete", dog_path(dog),method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
         </div>
       </div>
       <% end %>
@@ -136,3 +136,17 @@
 </div>
 </div>
 </div>
+
+
+
+
+<%#= render 'shared/footer' %>
+
+
+
+
+
+
+
+<%= render 'shared/footer' %>
+
