@@ -120,7 +120,7 @@
     <div class="cards">
       <div class="row">
       <% @user.dogs.each do |dog| %>
-      <div class="card-category card-margin-border-radius card-profile col-4">
+      <div class="card card-category card-index-height card-margin-border-radius card-profile col-4">
         <img src='<%= dog.photo %>', class="card-photo" />
         <div class="card-body">
           <h5 class="card-title"><%= dog.name %></h5>
@@ -139,6 +139,7 @@
 
 
 
+
 <%#= render 'shared/footer' %>
 
 
@@ -148,3 +149,4 @@
 
 
 <%= render 'shared/footer' %>
+
