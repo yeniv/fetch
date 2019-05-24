@@ -14,7 +14,8 @@
 }
 
 .dog-index-container {
-  background: radial-gradient(circle, rgba(252,190,70,1) 15%, rgba(252,248,70,1) 100%);
+  background-color: rgb(245, 245, 245)
+  // background: radial-gradient(circle, rgba(252,210,70,1) 15%, rgba(254, 223, 67,1) 100%);
 }
 
 .page-title h1 {
@@ -22,10 +23,14 @@
   // // color: black;
   // text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   margin: 0;
-  color: white;
+  color: rgb(100, 100, 100);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-size: 49px;
   font-weight: bold;
   text-align: center;
   vertical-align: middle;
+}
+
+body {
+  color: rgb(100, 100, 100);
 }
