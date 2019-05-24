@@ -2,7 +2,7 @@
   overflow: hidden;
   height: 120px;
   margin-right: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.0);
+  box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,5 +20,5 @@
 }
 
 .nobc{
-  background-color: transparent 
+  background-color: transparent
 }
