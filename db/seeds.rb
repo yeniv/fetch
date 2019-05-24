@@ -60,6 +60,19 @@ tristan = User.new(
 )
 tristan.save!
 
+puts "Creating fake Boris..."
+
+boris = User.new(
+  email: 'boris@fetch.com',
+  password: '123456',
+  first_name: 'Boris',
+  last_name: 'Yeniv',
+  profile_photo: Pathname.new("./app/assets/images/seed-user/boris.jpg").open,
+  about: 'I own dogs all over the world. I just cannot stop buying dogs. Please... somebody walk all these dogs for me!',
+  phone_number: '(+31) 020 123 4567'
+)
+boris.save!
+
 # CREATE DOGS
 
 puts "Creating fake King Charles..."
@@ -151,6 +164,97 @@ whippet = Dog.new(
 
 whippet.user = max_s
 whippet.save!
+
+puts "Creating fake Shiba Inu..."
+
+shiba = Dog.new(
+  name: 'Shibba Shibba',
+  breed: 'Shiba Inu',
+  gender: 'Male',
+  age: '7',
+  description: 'Look wise. Because he\'s wise af.',
+  photo: Pathname.new("./app/assets/images/seed-dog/shiba-inu.jpg").open,
+  location: 'Tokyo, Japan',
+)
+
+shiba.user = boris
+shiba.save!
+
+puts "Creating fake Ridgeback..."
+
+ridgeback = Dog.new(
+  name: 'Jokk',
+  breed: 'Rhodesian Ridgeback',
+  gender: 'Female',
+  age: '4',
+  description: 'Eats lions for breakfast.',
+  photo: Pathname.new("./app/assets/images/seed-dog/ridgeback.jpg").open,
+  location: 'Cape Town, South Africa',
+)
+
+ridgeback.user = boris
+ridgeback.save!
+
+puts "Creating fake Taz..."
+
+taz = Dog.new(
+  name: 'Razzle Tazzle',
+  breed: 'Taz',
+  gender: 'Male',
+  age: '6',
+  description: 'Hunts for money. And fun!',
+  photo: Pathname.new("./app/assets/images/seed-dog/taz.jpg").open,
+  location: 'Almaty, Kazakhstan',
+)
+
+taz.user = boris
+taz.save!
+
+puts "Creating fake Husky..."
+
+husky = Dog.new(
+  name: 'Gene Hackman',
+  breed: 'Husky',
+  gender: 'Male',
+  age: '1',
+  description: 'Spends an uncomfortable amount of time staring into the abyss.',
+  photo: Pathname.new("./app/assets/images/seed-dog/huskie.jpg").open,
+  location: 'Sydney, Australia',
+)
+
+husky.user = boris
+husky.save!
+
+puts "Creating fake Bear Dog..."
+
+paddington = Dog.new(
+  name: 'Paddington',
+  breed: 'Russian Bear Dog',
+  gender: 'Male',
+  age: '20',
+  description: 'Often mistaken for a bear.',
+  photo: Pathname.new("./app/assets/images/seed-dog/russian-bear-dog.jpg").open,
+  location: 'Moscow, Russia',
+)
+
+paddington.user = boris
+paddington.save!
+
+puts "Creating fake Jet Ski Dog..."
+
+scuba_steve = Dog.new(
+  name: 'Scuba Steve',
+  breed: 'labrador Retriever',
+  gender: 'Male',
+  age: '4',
+  description: 'Stole my jetski 4 years ago amnd hasn\'t been seen since. Approach with caution',
+  photo: Pathname.new("./app/assets/images/seed-dog/jetski.jpg").open,
+  location: 'Maldives',
+)
+
+scuba_steve.user = boris
+scuba_steve.save!
+
 
 # # CREATE APPOINTMENTS
 
