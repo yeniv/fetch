@@ -35,7 +35,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to profile_path(current_user)
     else
-      render :new
+      render 'dogs/show'
     end
   end
 
