@@ -13,7 +13,7 @@
             </div>
             <div class="card">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">
+                <li class="list-group-item border-top">
                   <h6 class="card-subtitle mb-2 text-muted">Email</h6>
                   <%= @user.email %>
                 </li>
@@ -21,7 +21,7 @@
                   <h6 class="card-subtitle mb-2 text-muted">About</h6>
                   <%= @user.about %>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item border-bot">
                   <h6 class="card-subtitle mb-2 text-muted">Mobile</h6>
                   <%= @user.phone_number %>
                 </li>
@@ -33,7 +33,7 @@
         <div class="requests-profile">
           <% if @appointments_recieved.present? %>
 
-          <h2>Walk requests recieved 🐾</h2>
+          <h2 class="">Walk requests recieved 🐾</h2>
           <% @appointments_recieved.each do |appointment| %>
 
           <% if appointment.status.downcase == "pending" %>
@@ -78,7 +78,7 @@
 
           <% if @appointments_made.present? %>
 
-          <h2>Walk requests sent 🐾</h2>
+          <h2 class="">Walk requests sent 🐾</h2>
           <% @appointments_made.each do |appointment| %>
 
           <% if appointment.status.downcase == "pending" %> <% status_style = "badge
@@ -121,9 +121,9 @@
 
         </div>
 
-        <h2 class="text-center page-title">Your listed dogs 🐶</h2>
+        <h2 class="text-center page-title ">Your listed dogs 🐶</h2>
 
-        <div class="dog-index-card-grid">
+        <div class="dog-index-card-grid mb-5">
           <% @user.dogs.each do |dog| %>
           <div class="card card-index-height card-margin-border-radius card-profiles">
             <img src='<%= dog.photo %>', class="card-photo" />
