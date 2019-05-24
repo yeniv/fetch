@@ -17,21 +17,32 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
 
+const popupOffsets = {
+ 'bottom': [-7, -25]
+ };
+
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+      const popup = new mapboxgl.Popup({offset: popupOffsets}).setHTML(marker.infoWindow);
 
       const element = document.createElement('div');
-      element.className = 'marker';
+      element.className = `marker-${marker.dogID}`;
       element.style.backgroundImage = `url('${marker.image_url}')`;
       element.style.backgroundSize = 'contain';
       element.style.width = '50px';
       element.style.height = '50px';
 
-      new mapboxgl.Marker(element)
+      let mapboxMarker = new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
-      .addTo(map);
+      .addTo(map)
+
+      let dogCard = document.querySelector(`#card-${marker.dogID}`)
+
+      dogCard.addEventListener('click', () => {
+        mapboxMarker.togglePopup()
+        map.flyTo({center: [marker.lng, marker.lat], zoom: 13})
+      })
     });
 
     fitMapToMarkers(map, markers);
