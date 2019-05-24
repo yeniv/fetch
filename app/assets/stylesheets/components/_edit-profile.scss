@@ -22,19 +22,19 @@
     padding-top: 100px;
   }
   
-  .edit-btn {
+  .edit-btnc {
 
     border-radius: 10px;
     background-color: #ffb200;
     color: white;
-    margin: 0px 0px 15px 0px;
+    margin: 0px 91px 15px 103px;
   }
 
   .page-title{
 
   }
 
-  .mdl {
+  .mdla {
    display: flex;
    text-align: center;
    align-items: center;
@@ -43,7 +43,19 @@
 
   }
   .upd{
-    padding-left: 32%;
-    padding-top: 2%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding-left: 23%;
     padding-bottom: 2%;
-  }
+    
+    }
+
+    .mdle {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      padding-left: 41%;
+      padding-bottom: 2%;
+   
+     }
