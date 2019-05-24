@@ -1,3 +1,7 @@
+<div class="background-color">
+        <div class="container width">
+            <div class="bg-margin">
+              <div class="page-title">
 <%= simple_form_for @dog do |f| %>
 <%= f.input :name%>
 <%= f.input :breed%>
@@ -7,6 +11,13 @@
 <%= f.input :location %>
 <%= f.input :photo%>
 <%= f.input :photo_cache, as: :hidden %>
+<div class="btn-in-middle upd">
 <%= f.button :submit, class: "btn btn-success btn-lg" %>
+</div>
 <% end %>
+<div class="btn-in-middle mdl">
 <%= link_to "Delete", dog_path(@dog),method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+</div>
+</div>
+</div>
+</div>
