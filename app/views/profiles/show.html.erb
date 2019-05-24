@@ -60,7 +60,7 @@
         <div class="underline">
           <p><%= appointment.date.strftime("%A %d, %B") %> from <%= appointment.time_start.strftime("%I:%M%p") %> to <%= appointment.time_end.strftime("%I:%M%p") %></p>
         </div>
-        <h3><span class="badge badge-pill badge-dark"><%= appointment.request_message %></span></h3>
+        <h3><span class="badge badge-pill"><%= appointment.request_message %></span></h3>
       </div>
       <div class="notification-buttons">
         <%= link_to "Accept", accept_appointment_path(appointment), method: :patch, class: "btn btn-lg btn-outline-success" %>
@@ -107,7 +107,7 @@
             appointment.time_end.strftime("%I:%M%p") %></p>
           </div>
           <h3><span class="badge
-            badge-pill badge-dark"><%= appointment.request_message %></span></h3>
+            badge-pill"><%= appointment.request_message %></span></h3>
           </div>
         </div>
         <% end %>
@@ -117,10 +117,11 @@
     </div>
 
     <h2 class="text-center page-title">Your listed dogs 🐶</h2>
-    <div class="cards">
-      <div class="row">
+
+    <!-- <div class="cards"> -->
+      <div class="dog-index-card-grid">
       <% @user.dogs.each do |dog| %>
-      <div class="card card-category card-index-height card-margin-border-radius card-profile col-4">
+      <div class="card card-index-height card-margin-border-radius card-profiles">
         <img src='<%= dog.photo %>', class="card-photo" />
         <div class="card-body">
           <h5 class="card-title"><%= dog.name %></h5>
@@ -132,7 +133,7 @@
       <% end %>
     </div>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
 </div>
 </div>
