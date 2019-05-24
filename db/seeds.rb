@@ -247,7 +247,8 @@ scuba_steve = Dog.new(
   breed: 'labrador Retriever',
   gender: 'Male',
   age: '4',
-  description: 'Stole my jetski 4 years ago amnd hasn\'t been seen since. Approach with caution',
+  description: 'Stole my jetski 4 years ago and hasn\'t been seen since.
+  Approach with caution',
   photo: Pathname.new("./app/assets/images/seed-dog/jetski.jpg").open,
   location: 'Maldives',
 )
