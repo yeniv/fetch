@@ -1,3 +1,7 @@
+<div class="background-color">
+    <div class="container width">
+        <div class="bg-margin">
+          <div class="page-title">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -42,16 +46,18 @@
                 required: false,
                 input_html: { autocomplete: "" } %>
 </div>
-
-<div class="form-actions">
-  <%= f.button :submit, "Update" %>
+<div class="btn-in-middle mdl">
+<div class="form-actions">   
+  <%= f.button :submit, "Update", class: "btn btn-success" %>
 </div>
-<% end %>
-
-<h3>Cancel my account</h3>
+</div>
+<% end %> 
 
 <p>Unhappy?
   <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 </p>
 
 <%= link_to "Back", :back %>
+</div>
+</div>
+</div>
