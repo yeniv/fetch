@@ -1,0 +1,45 @@
+.bg-margin {
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 30px;
+    border: solid;
+    border-width: 0.5px;
+    border-color: #cecece;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.08);
+  }
+  
+  .background-color {
+
+    background: radial-gradient(circle, rgba(252,190,70,1) 15%, rgba(252,248,70,1) 100%);
+    width: 100%;
+    min-height: 92.8vh;
+  }
+  
+  .width {
+
+    width: 500px;
+    padding-top: 100px;
+  }
+  
+  .edit-btn {
+
+    border-radius: 10px;
+    background-color: #ffb200;
+    color: white;
+    margin: 0px 0px 15px 0px;
+  }
+
+  .page-title{
+
+  }
+
+  .mdl {
+   display: flex;
+   text-align: center;
+   align-items: center;
+   padding-left: 41%;
+   padding-bottom: 2%;
+
+  }
+  
